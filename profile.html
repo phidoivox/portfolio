@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <canvas id="sakura-canvas"></canvas>
+    <div class="profile-card">
+        <!-- Cột Trái: Avatar & Thông tin cơ bản -->
+        <div class="profile-left">
+            <div class="avatar-wrapper">
+                <img src="https://24hstore.vn/upload_images/images/hinh-nen-anime/hinh-nen-anime-ngau-nam-8.jpg"
+                    alt="Avatar" class="avatar">
+            </div>
+            <h1 class="name">Võ Hoàng Nam</h1>
+            <p class="title"><span id="typing-text"></span><span class="cursor">|</span></p>
+
+            <div class="side-info">
+                <div class="side-info-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="side-info-text">
+                        <span class="side-info-label">Tuổi</span>
+                        19 tuổi
+                    </div>
+                </div>
+                <div class="side-info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="side-info-text">
+                        <span class="side-info-label">Vị trí</span>
+                        Đà Nẵng, Việt Nam
+                    </div>
+                </div>
+                <div class="side-info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="side-info-text">
+                        <span class="side-info-label">Email</span>
+                        vohoangnam2006.vn@gmail.com
+                    </div>
+                </div>
+                <div class="side-info-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="side-info-text">
+                        <span class="side-info-label">Điện thoại</span>
+                        +84 918 0377 52
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cột Phải: Tabs Nội dung -->
+        <div class="profile-right">
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="showTab('intro', event)">Giới thiệu</button>
+                <button class="tab-btn" onclick="showTab('hobbies', event)">Sở thích</button>
+                <button class="tab-btn" onclick="showTab('qa', event)">Q&A</button>
+                <button class="tab-btn" onclick="showTab('contact', event)">Liên hệ</button>
+            </div>
+
+            <!-- Tab: Giới thiệu & Công nghệ -->
+            <div id="intro" class="tab-content active">
+                <h2 class="section-title">Về bản thân</h2>
+                <p class="intro-text">
+                    Xin chào! Mình là sinh viên năm 2 nghành công nghệ thông tin, mình rất thích ngủ.
+                </p>
+
+                <h2 class="section-title">Kỹ năng & Công nghệ</h2>
+                <div class="tech-grid">
+                    <div class="badge html"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="badge css"><i class="fab fa-css3-alt"></i> CSS3</div>
+                    <div class="badge tailwind">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 154" width="24" height="24"
+                            style="opacity:1;">
+                            <defs>
+                                <linearGradient id="SVG80JqDb2a" x1="-2.778%" x2="100%" y1="32%" y2="67.556%">
+                                    <stop offset="0%" stop-color="#2298BD" />
+                                    <stop offset="100%" stop-color="#0ED7B5" />
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#SVG80JqDb2a)"
+                                d="M128 0Q76.8 0 64 51.2Q83.2 25.6 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8q51.2 0 64-51.2q-19.2 25.6-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0M64 76.8q-51.2 0-64 51.2q19.2-25.6 44.8-19.2c9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6q51.2 0 64-51.2q-19.2 25.6-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8" />
+                        </svg>
+                        Tailwind
+                    </div>
+                    <div class="badge bootstrap"><i class="fab fa-bootstrap"></i> Bootstrap</div>
+                    <div class="badge js"><i class="fab fa-js"></i> JavaScript</div>
+                    <div class="badge react"><i class="fab fa-react"></i> React</div>
+                    <div class="badge nextjs"><i class="fas fa-bolt"></i> Next.js</div>
+                    <div class="badge vue"><i class="fab fa-vuejs"></i> Vue.js</div>
+                    <div class="badge node"><i class="fab fa-node-js"></i> Node.js</div>
+                    <div class="badge php"><i class="fab fa-php"></i> PHP</div>
+                    <div class="badge mysql"><i class="fas fa-database"></i> MySQL</div>
+                    <div class="badge sql-server"><i class="fab fa-microsoft"></i> SQL Server</div>
+                    <div class="badge laravel"><i class="fab fa-laravel"></i> Laravel</div>
+                    <div class="badge figma"><i class="fab fa-figma"></i> Figma</div>
+                    <div class="badge git"><i class="fab fa-git-alt"></i> Git</div>
+                    <div class="badge docker"><i class="fab fa-docker"></i> Docker</div>
+                    <div class="badge python"><i class="fab fa-python"></i> Python</div>
+                </div>
+            </div>
+
+            <div id="hobbies" class="tab-content">
+                <div class="hobbies-bento">
+                    <div class="bento-item code large" onclick="hobbyAction('code')">
+                        <div class="bento-content">
+                            <i class="fas fa-code"></i>
+                            <div class="bento-text">
+                                <h3>Viết code</h3>
+                                <p>Biến ý tưởng thành sản phẩm thực tế.</p>
+                            </div>
+                        </div>
+                        <div class="bento-bg-icon"><i class="fas fa-code"></i></div>
+                    </div>
+                    <div class="bento-item game tall" onclick="hobbyAction('game')">
+                        <div class="bento-content">
+                            <i class="fas fa-gamepad"></i>
+                            <div class="bento-text">
+                                <h3>Gaming</h3>
+                                <p>Thích Chơi Game Delta Force.</p>
+                            </div>
+                        </div>
+                        <div class="bento-bg-icon"><i class="fas fa-gamepad"></i></div>
+                    </div>
+                    <div class="bento-item music" onclick="hobbyAction('music')">
+                        <div class="bento-content">
+                            <i class="fas fa-headphones"></i>
+                            <h3>Music</h3>
+                        </div>
+                    </div>
+                    <div class="bento-item sleep" onclick="hobbyAction('sleep')">
+                        <div class="bento-content">
+                            <i class="fas fa-moon"></i>
+                            <h3>Sleep</h3>
+                        </div>
+                    </div>
+                    <div class="bento-item movie" onclick="hobbyAction('movie')">
+                        <div class="bento-content">
+                            <i class="fas fa-film"></i>
+                            <h3>Movie</h3>
+                        </div>
+                    </div>
+                    <div class="bento-item eat" onclick="hobbyAction('eat')">
+                        <div class="bento-content">
+                            <i class="fas fa-utensils"></i>
+                            <h3>Eat</h3>
+                        </div>
+                        <div class="bento-bg-icon"><i class="fas fa-utensils"></i></div>
+                    </div>
+                </div>
+
+                <!-- Hobby Interactive Elements -->
+                <div id="hobby-dynamic-content">
+                    <!-- Music Player -->
+                    <div id="music-player" class="hobby-element">
+                        <div class="player-info">
+                            <div class="music-bars">
+                                <span></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="track-details">
+                                <span class="track-name" id="current-track-name">Loading...</span>
+                                <span class="track-status" id="current-track-status">Đang phát...</span>
+                            </div>
+                        </div>
+
+                        <div class="music-controls">
+                            <button class="control-btn" onclick="prevTrack()"><i
+                                    class="fas fa-step-backward"></i></button>
+                            <button class="control-btn play-pause" id="play-pause-btn" onclick="togglePlay()">
+                                <i class="fas fa-pause"></i>
+                            </button>
+                            <button class="control-btn" onclick="nextTrack()"><i
+                                    class="fas fa-step-forward"></i></button>
+                        </div>
+
+                        <audio id="bg-music">
+                            <source src="" type="audio/mpeg">
+                        </audio>
+                        <button class="player-close" onclick="closeHobbyElement('music-player', event)"><i
+                                class="fas fa-times"></i></button>
+                    </div>
+
+                    <!-- Terminal Code -->
+                    <div id="terminal-overlay" class="hobby-element terminal">
+                        <div class="terminal-header">
+                            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                            <span class="terminal-title">bash — user@dev</span>
+                        </div>
+                        <div class="terminal-body" id="terminal-body">
+                            <p class="history">Last login: Sat Jan 17 2026</p>
+                            <p class="command-line"><span class="prompt">$</span> <span class="typing">npm start
+                                    dev</span></p>
+                        </div>
+                    </div>
+
+                    <!-- Eat video -->
+                    <div id="eat-video" class="hobby-element video-overlay">
+                        <video id="eat-video-player" width="100%" height="auto" controls>
+                            <source src="eat.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ video.
+                        </video>
+                        <button class="player-close" onclick="closeHobbyElement('eat-video', event)"><i
+                                class="fas fa-times"></i></button>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Tab: Q&A -->
+            <div id="qa" class="tab-content">
+                <h2 class="section-title">Thử thách: Bạn hiểu mình đến mức nào?</h2>
+                <div class="quiz-container">
+                    <!-- Progress Bar -->
+                    <div class="quiz-progress">
+                        <div class="progress-fill" id="quiz-progress-fill"></div>
+                    </div>
+
+                    <div id="quiz-screen">
+                        <div class="quiz-question-box">
+                            <span class="q-index" id="q-index">Câu hỏi 1/--</span>
+                            <h3 id="q-text">Mình Thích Ăn Gì Nhất?</h3>
+                            <div class="options-grid" id="q-options">
+                                <!-- Options will be injected by JS -->
+                            </div>
+                            <!-- Video hiển thị khi trả lời sai -->
+                            <div id="wrong-video-box" style="display:none; margin-top:15px; text-align:center;">
+                                <video id="wrong-video" style="width:100%; max-height:200px; border-radius:8px;"
+                                    controls>
+                                    <source src="hehe.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="result-screen" style="display: none;">
+                        <div class="result-box">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4M9KVi9t-gsolmw9yR-9gJlvkserUKXnaJw&s"
+                                alt="Success" class="result-image">
+                            <h3>Chúc mừng!</h3>
+                            <p>Bạn đã hoàn thành bài trắc nghiệm.</p>
+                            <div class="score-display">
+                                <span id="correct-count">0</span>/<span id="total-questions">0</span>
+                            </div>
+                            <button class="retry-btn" onclick="restartQuiz()">Thử lại</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Tab: Liên hệ -->
+            <div id="contact" class="tab-content">
+                <h2 class="section-title">Kết nối với mình</h2>
+                <div class="contact-grid">
+                    <a href="https://facebook.com/h.namdev26" target="_blank" class="contact-card facebook">
+                        <div class="contact-icon"><i class="fab fa-facebook-f"></i></div>
+                        <div class="contact-info">
+                            <span class="platform">Facebook</span>
+                            <p class="username">Hoàng Nam</p>
+                        </div>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                    <a href="https://instagram.com/phidoivox" target="_blank" class="contact-card instagram">
+                        <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                        <div class="contact-info">
+                            <span class="platform">Instagram</span>
+                            <p class="username">@phidoivox</p>
+                        </div>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                    <a href="https://github.com/phidoivox" target="_blank" class="contact-card github">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <div class="contact-info">
+                            <span class="platform">GitHub</span>
+                            <p class="username">@phidoivox</p>
+                        </div>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                    <a href="https://x.com/phidoivox" target="_blank" class="contact-card x-twitter">
+                        <div class="contact-icon"><i class="fab fa-x-twitter"></i></div>
+                        <div class="contact-info">
+                            <span class="platform">X (Twitter)</span>
+                            <p class="username">@phidoivox</p>
+                        </div>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                    <a href="mailto:vohoangnam2006.vn@gmail.com" class="contact-card email">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-info">
+                            <span class="platform">Email</span>
+                            <p class="username">vohoangnam2006.vn</p>
+                        </div>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                    <a href="https://zalo.me/0918037752" target="_blank" class="contact-card zalo">
+                        <div class="contact-icon"><i class="fas fa-comment"></i></div>
+                        <div class="contact-info">
+                            <span class="platform">Zalo</span>
+                            <p class="username">0918.037.752</p>
+                        </div>
+                        <i class="fas fa-chevron-right arrow"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching logic
+        function showTab(tabId, event) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+
+            if (tabId === 'qa') {
+                initQuiz();
+            }
+        }
+
+        // Typing Effect logic
+        const textElement = document.getElementById('typing-text');
+        const phrases = ["Fullstack Web Developer", "UI/UX Designer", "Problem Solver"];
+        let i = 0, j = 0, d = 1; // i: index of phrase, j: index of character, d: direction
+
+        function type() {
+            const word = phrases[i];
+            j += d; // Increment or decrement j based on direction
+            textElement.textContent = word.substring(0, j);
+
+            // speed and state flip:
+            // d=1 (typing), d=-1 (deleting)
+            let speed = d > 0 ? 100 : 50;
+
+            if (j === word.length || (j === 0 && d < 0)) {
+                speed = d > 0 ? 2000 : 500; // Pause at end or start
+                d *= -1; // Flip direction
+                if (d > 0) i = (i + 1) % phrases.length; // Next word
+            }
+            setTimeout(type, speed); // Recursively call type()
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            type();
+
+            // Auto-play next track when ended
+            const audio = document.getElementById('bg-music');
+            audio.onended = () => nextTrack();
+        });
+
+        // Playlist Data
+        const playlist = [
+            { name: "Anh Nhớ Em Nhiều Lắm (B Nguyễn Remix)", src: "./anh_nho_em_nhieu_lam.mp3" },
+            { name: "Green Rain (Shinee)", src: "./green_rain.mp3" },
+            { name: "Yêu Thương Chẳng Là Mãi Mãi", src: "./yeu_thuong_chang_la_mai_mai.mp3" },
+            { name: "Người đã yêu ai (Remix)", src: "./nguoi_da_yeu_ai.mp3" },
+
+        ];
+        let currentTrackIdx = 0;
+        let isPlaying = false;
+
+        function hobbyAction(type) {
+            // Close all other hobby elements
+            document.querySelectorAll('.hobby-element').forEach(el => el.classList.remove('active'));
+
+            if (type === 'music') {
+                const player = document.getElementById('music-player');
+                player.classList.add('active');
+                if (!isPlaying) {
+                    updateTrack();
+                    togglePlay();
+                }
+            } else if (type === 'code') {
+                document.getElementById('terminal-overlay').classList.add('active');
+            } else if (type === 'game') {
+                window.open('https://deltaforce.garena.com/en', '_blank');
+            } else if (type === 'sleep') {
+                document.body.classList.add('sleep-mode');
+                setTimeout(() => document.body.classList.remove('sleep-mode'), 4000);
+            } else if (type === 'movie') {
+                window.open('https://www.rophim.nl/phimhay', '_blank');
+            } else if (type === 'eat') {
+                const eatVideo = document.getElementById('eat-video');
+                const video = document.getElementById('eat-video-player');
+                eatVideo.classList.add('active');
+                video.play();
+
+                // Tự động đóng khi video kết thúc
+                video.onended = () => {
+                    closeHobbyElement('eat-video', { stopPropagation: () => { } });
+                };
+            }
+        }
+
+        function updateTrack() {
+            const audio = document.getElementById('bg-music');
+            const trackName = document.getElementById('current-track-name');
+            const track = playlist[currentTrackIdx];
+
+            audio.src = track.src;
+            trackName.textContent = track.name;
+        }
+
+        function togglePlay() {
+            const audio = document.getElementById('bg-music');
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const trackStatus = document.getElementById('current-track-status');
+
+            if (audio.paused) {
+                audio.play();
+                isPlaying = true;
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                trackStatus.textContent = "Đang phát...";
+            } else {
+                audio.pause();
+                isPlaying = false;
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                trackStatus.textContent = "Đã tạm dừng";
+            }
+        }
+
+        function nextTrack() {
+            currentTrackIdx = (currentTrackIdx + 1) % playlist.length;
+            updateTrack();
+            if (isPlaying) {
+                const audio = document.getElementById('bg-music');
+                audio.play();
+            }
+        }
+
+        function prevTrack() {
+            currentTrackIdx = (currentTrackIdx - 1 + playlist.length) % playlist.length;
+            updateTrack();
+            if (isPlaying) {
+                const audio = document.getElementById('bg-music');
+                audio.play();
+            }
+        }
+
+        function closeHobbyElement(id, event) {
+            event.stopPropagation();
+            const el = document.getElementById(id);
+            el.classList.remove('active');
+
+            // Nếu là video thì dừng lại
+            const video = el.querySelector('video');
+            if (video) {
+                video.pause();
+            }
+        }
+
+        // Quiz Logic
+        const quizData = [
+            {
+                question: "Mình Thích Ăn Gì Nhất?",
+                options: ["Bánh Mì", "Cơm", "Phở", "Bánh Ướt"],
+                correct: 3
+            },
+            {
+                question: "Mình Thích Động Vật Nào Nhất?",
+                options: ["Chó", "Mèo", "Capybara", "Chuột lang"],
+                correct: 3
+            },
+            {
+                question: "Mình Thích Làm Gì Nhất?",
+                options: ["Chơi game", "Ngủ", "Ăn", "Đi chơi"],
+                correct: 1
+            },
+            {
+                question: "Mình Thích Kiểu Con Gái Như Thế Nào?",
+                options: ["Dễ thương", "Lạnh lùng", "Ngoan ngoãn", "Tự tin"],
+                correct: 1
+            },
+            {
+                question: "Mình Thích Chơi Game Nào Nhất?",
+                options: ["Liên Quân", "PUBG", "League of Legends", "Delta Force"],
+                correct: 3
+            },
+            {
+                question: "Mình Thích Ngôn Ngữ Lập Trình Nào Nhất?",
+                options: ["Java", "Python", "C++", "JavaScript"],
+                correct: 3
+            },
+            {
+                question: "Mình lập trình trang web đầu tiên vào năm bao nhiêu tuổi?",
+                options: ["10 tuổi", "15 tuổi", "17 tuổi", "19 tuổi"],
+                correct: 1
+            },
+            {
+                question: "Mình thường làm gì khi cảm thấy buồn?",
+                options: ["Suy Nghĩ Một Chuyện Vui", "Nghe Nhạc", "Xem Phim", "Ăn"],
+                correct: 1
+            },
+            {
+                question: "Việt Nam Có Bao Nhiêu Lần Vô Địch AFC Asian Cup",
+                options: ["0", "1", "2", "3"],
+                correct: 0
+            },
+            {
+                question: "Ai Là Người Đá Hay Nhất Đội Tuyển VN Hiện Tại?",
+                options: ["Nguyễn Đình Bắc", "Trần Trung Kiên", "Nguyễn Xuân Bắc", "Phạm Minh Phúc"],
+                correct: 0
+            },
+            {
+                question: "1+1=?",
+                options: ["1", "2", "3", "4"],
+                correct: 2
+            },
+        ];
+
+        let currentQuestionIdx = 0;
+        let quizScore = 0;
+
+        function initQuiz() {
+            const screen = document.getElementById('quiz-screen');
+            const resultScreen = document.getElementById('result-screen');
+            if (!screen || !resultScreen) return;
+
+            screen.style.display = 'block';
+            resultScreen.style.display = 'none';
+            currentQuestionIdx = 0;
+            quizScore = 0;
+            updateQuizQuestion();
+        }
+
+        function updateQuizQuestion() {
+            const data = quizData[currentQuestionIdx];
+            document.getElementById('q-index').textContent = `Câu hỏi ${currentQuestionIdx + 1}/${quizData.length}`;
+            document.getElementById('q-text').textContent = data.question;
+
+            const optionsContainer = document.getElementById('q-options');
+            optionsContainer.innerHTML = '';
+
+            data.options.forEach((opt, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-opt';
+                btn.textContent = opt;
+                btn.onclick = () => handleQuizSelect(index);
+                optionsContainer.appendChild(btn);
+            });
+
+            const progress = ((currentQuestionIdx) / quizData.length) * 100;
+            document.getElementById('quiz-progress-fill').style.width = `${progress}%`;
+        }
+
+        function handleQuizSelect(index) {
+            const data = quizData[currentQuestionIdx];
+            const buttons = document.querySelectorAll('.quiz-opt');
+
+            buttons.forEach(btn => btn.style.pointerEvents = 'none');
+
+            if (index === data.correct) {
+                buttons[index].classList.add('correct');
+                quizScore++;
+                // Đúng: chờ 1.2s rồi chuyển câu
+                setTimeout(() => {
+                    goToNextQuestion();
+                }, 1200);
+            } else {
+                buttons[index].classList.add('wrong');
+                buttons[data.correct].classList.add('correct');
+                showWrongVideo();
+                // Sai: chờ video chạy hết rồi mới chuyển câu
+                const video = document.getElementById('wrong-video');
+                video.onended = () => {
+                    closeWrongVideo();
+                    goToNextQuestion();
+                };
+            }
+        }
+
+        function goToNextQuestion() {
+            currentQuestionIdx++;
+            if (currentQuestionIdx < quizData.length) {
+                updateQuizQuestion();
+            } else {
+                showQuizResult();
+            }
+        }
+
+        function showQuizResult() {
+            document.getElementById('quiz-screen').style.display = 'none';
+            document.getElementById('result-screen').style.display = 'block';
+            document.getElementById('correct-count').textContent = quizScore;
+            document.getElementById('total-questions').textContent = quizData.length;
+            document.getElementById('quiz-progress-fill').style.width = '100%';
+        }
+
+        function restartQuiz() {
+            initQuiz();
+        }
+
+        function toggleQA(element) {
+            // Deprecated for Quiz
+        }
+
+        // Hiển thị video khi trả lời sai
+        function showWrongVideo() {
+            const videoBox = document.getElementById('wrong-video-box');
+            const video = document.getElementById('wrong-video');
+            videoBox.style.display = 'block';
+            video.currentTime = 0;
+            video.play();
+        }
+
+        function closeWrongVideo() {
+            const videoBox = document.getElementById('wrong-video-box');
+            const video = document.getElementById('wrong-video');
+            videoBox.style.display = 'none';
+            video.pause();
+        }
+
+        // Sakura Falling Effect
+        const canvas = document.getElementById('sakura-canvas');
+        const ctx = canvas.getContext('2d');
+        let petals = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Petal {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height - canvas.height;
+                this.size = Math.random() * 5 + 5;
+                this.speed = Math.random() * 1.5 + 0.5;
+                this.angle = Math.random() * Math.PI * 2;
+                this.spinSpeed = Math.random() * 0.05 - 0.025;
+                this.sway = Math.random() * 2 + 1;
+                this.swaySpeed = Math.random() * 0.02 + 0.01;
+                this.phase = Math.random() * Math.PI * 2;
+                this.color = `rgba(255, ${180 + Math.random() * 40}, ${200 + Math.random() * 30}, ${Math.random() * 0.5 + 0.3})`;
+            }
+
+            update() {
+                this.y += this.speed;
+                this.x += Math.sin(this.phase) * this.sway;
+                this.phase += this.swaySpeed;
+                this.angle += this.spinSpeed;
+
+                if (this.y > canvas.height + 10) {
+                    this.init();
+                    this.y = -10;
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.angle);
+                ctx.beginPath();
+                // Simple leaf shape using curves
+                ctx.moveTo(0, 0);
+                ctx.bezierCurveTo(-this.size, this.size / 2, -this.size, this.size * 1.5, 0, this.size * 2);
+                ctx.bezierCurveTo(this.size, this.size * 1.5, this.size, this.size / 2, 0, 0);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        function createPetals() {
+            const count = 50;
+            for (let i = 0; i < count; i++) {
+                petals.push(new Petal());
+            }
+        }
+
+        function animateSakura() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            petals.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateSakura);
+        }
+
+        createPetals();
+        animateSakura();
+    </script>
+</body>
+
+</html>
